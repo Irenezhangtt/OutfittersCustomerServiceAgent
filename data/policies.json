@@ -1,0 +1,8 @@
+{
+  "version": "sierra-mvp-1",
+  "order_lookup": "An exact email and order-number match grants access to that order's status and tracking only. This is not account authentication.",
+  "order_actions": "Authenticated customers may cancel placed orders and request a return for delivered orders. In-transit, unknown and error states allow neither action. Returns are requests only; no refund or warehouse action is executed.",
+  "early_risers": "A customer must explicitly request the Early Risers Promotion. New codes are issued from 08:00 inclusive to 10:00 exclusive America/Los_Angeles using the server's message receipt time. One 10-percent code per authenticated customer per campaign. An existing code may be retrieved outside that window.",
+  "returns": "The MVP records a return request for a delivered order. Return windows, condition checks, labels, fees, refund amounts and settlement are not defined; these questions require human review.",
+  "handoff": "An escalation creates a persistent local ticket. No live agent connection, external notification or response-time commitment is provided."
+}

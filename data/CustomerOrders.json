@@ -1,0 +1,112 @@
+[
+  {
+    "CustomerName": "Demo Explorer 01",
+    "Email": "explorer01@example.com",
+    "OrderNumber": "#W001",
+    "ProductsOrdered": [
+      "SOBP001"
+    ],
+    "Status": "delivered",
+    "TrackingNumber": "DEMO_TRACK_001",
+    "DemoFixture": true
+  },
+  {
+    "CustomerName": "Demo Explorer 02",
+    "Email": "explorer02@example.com",
+    "OrderNumber": "#W002",
+    "ProductsOrdered": [
+      "SOTN002"
+    ],
+    "Status": "in-transit",
+    "TrackingNumber": "DEMO_TRACK_002",
+    "DemoFixture": true
+  },
+  {
+    "CustomerName": "Demo Explorer 03",
+    "Email": "explorer03@example.com",
+    "OrderNumber": "#W003",
+    "ProductsOrdered": [
+      "SOBT003"
+    ],
+    "Status": "fulfilled",
+    "TrackingNumber": null,
+    "DemoFixture": true
+  },
+  {
+    "CustomerName": "Demo Explorer 04",
+    "Email": "explorer04@example.com",
+    "OrderNumber": "#W004",
+    "ProductsOrdered": [
+      "SOWB004"
+    ],
+    "Status": "error",
+    "TrackingNumber": null,
+    "DemoFixture": true
+  },
+  {
+    "CustomerName": "Demo Explorer 05",
+    "Email": "explorer05@example.com",
+    "OrderNumber": "#W005",
+    "ProductsOrdered": [
+      "SOJT005"
+    ],
+    "Status": "delivered",
+    "TrackingNumber": "DEMO_TRACK_005",
+    "DemoFixture": true
+  },
+  {
+    "CustomerName": "Demo Explorer 06",
+    "Email": "explorer06@example.com",
+    "OrderNumber": "#W006",
+    "ProductsOrdered": [
+      "SOSB006"
+    ],
+    "Status": "in-transit",
+    "TrackingNumber": "DEMO_TRACK_006",
+    "DemoFixture": true
+  },
+  {
+    "CustomerName": "Demo Explorer 07",
+    "Email": "explorer07@example.com",
+    "OrderNumber": "#W007",
+    "ProductsOrdered": [
+      "SOSV007"
+    ],
+    "Status": "fulfilled",
+    "TrackingNumber": null,
+    "DemoFixture": true
+  },
+  {
+    "CustomerName": "Demo Explorer 08",
+    "Email": "explorer08@example.com",
+    "OrderNumber": "#W008",
+    "ProductsOrdered": [
+      "SOSV008"
+    ],
+    "Status": "error",
+    "TrackingNumber": null,
+    "DemoFixture": true
+  },
+  {
+    "CustomerName": "Demo Explorer 09",
+    "Email": "explorer09@example.com",
+    "OrderNumber": "#W009",
+    "ProductsOrdered": [
+      "SOSV009"
+    ],
+    "Status": "delivered",
+    "TrackingNumber": "DEMO_TRACK_009",
+    "DemoFixture": true
+  },
+  {
+    "CustomerName": "Demo Explorer 10",
+    "Email": "explorer10@example.com",
+    "OrderNumber": "#W010",
+    "ProductsOrdered": [
+      "SOSV010"
+    ],
+    "Status": "in-transit",
+    "TrackingNumber": "DEMO_TRACK_010",
+    "DemoFixture": true
+  }
+]
