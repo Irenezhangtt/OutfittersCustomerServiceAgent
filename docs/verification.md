@@ -14,12 +14,18 @@
 
 该性能测量不覆盖真实网络、并发负载、远程模型、冷启动或生产 PostgreSQL，不能推导生产 SLA。
 
-## 待补充的集成记录
+## 集成记录
 
-- Chromium / Chrome 浏览器端到端验证：执行后更新。
-- PostgreSQL：本机没有 PostgreSQL 或 Docker，使用仓库 CI 的 PostgreSQL service 验证，执行后更新。
+- Chrome 浏览器端到端验证：3 项通过（2.7 秒）。覆盖访客查询、USPS 链接、中英文推荐、登录、取消、工单、刷新后上下文，以及 390px 手机布局无横向溢出。测试过程中没有页面 JavaScript 异常。
+- 真实 PostgreSQL：GitHub Actions PostgreSQL 16 service 的 56 项后端测试通过；同一 CI 中 SQLite 56 项和前端检查全部通过。[代码提交 36b8af4 的完整 CI](https://github.com/Irenezhangtt/OutfittersCustomerServiceAgent/actions/runs/44163713868)。
 - Docker 镜像：本机没有 Docker，当前提供配置，未在本机构建运行。
 - 真实 LLM：没有提供 API 密钥，未执行在线模型测试；仅验证模拟故障和降级路径。
+
+## 公开数据边界
+
+自动发布审批阻止了原附件客户记录的发布。公开仓库改用独立生成的 synthetic 演示账户、订单和物流单号；原附件不提交。可通过 `ORDER_DATA_PATH` 指向本地 `data/private/` 文件测试原始数据，该目录同时排除于 Git 和提交 ZIP。
+
+桌面与手机截图位于 `docs/images/`，来自实际运行的公开 synthetic 数据版本。
 
 ## 依赖审计边界
 

@@ -4,6 +4,10 @@
 
 > 演示系统：订单操作仅更新项目数据库。退货申请不等于退款；当前没有连接真实支付、仓储、物流 API 或外部人工客服。
 
+![Sierra 桌面聊天界面](docs/images/sierra-desktop.png)
+
+[手机界面](docs/images/sierra-mobile.png) · [验证记录](docs/verification.md)
+
 ## 快速启动
 
 需要 Python 3.12+、Node.js 22.12+。无模型密钥也能运行核心业务。
@@ -220,6 +224,8 @@ npm --prefix frontend run test:e2e
 python scripts/benchmark.py
 python scripts/package.py
 ```
+
+`package.py` 打包当前 Git 提交的源码；先提交希望包含的修改。脚本检查并拒绝已跟踪的私有或生成文件。
 
 GitHub Actions 配置 SQLite / PostgreSQL service 回归及前端构建。浏览器测试需安装 Chromium：`npm --prefix frontend exec -- playwright install chromium`。
 

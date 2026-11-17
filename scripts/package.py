@@ -1,22 +1,17 @@
-"""Build a source ZIP without credentials, databases or dependencies."""
+"""Archive the current committed source, rejecting private or generated paths."""
 from pathlib import Path
-from zipfile import ZIP_DEFLATED, ZipFile
-import os
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDE = {".git", ".venv", "node_modules", "__pycache__", ".pytest_cache", ".ruff_cache", "dist", "artifacts", "test-results", "playwright-report", "private"}
 destination = ROOT / "artifacts" / "sierra-mvp.zip"
 destination.parent.mkdir(exist_ok=True)
-with ZipFile(destination, "w", ZIP_DEFLATED) as archive:
-    for directory, directories, filenames in os.walk(ROOT):
-        directories[:] = sorted(d for d in directories if d not in EXCLUDE and not d.endswith(".egg-info"))
-        for filename in sorted(filenames):
-            path = Path(directory) / filename
-            if path.is_symlink():
-                continue
-            if path.name == ".env" or path.name.startswith(".env.") and path.name != ".env.example":
-                continue
-            if path.suffix in {".db", ".pyc"} or ".db-" in path.name or path.name == ".DS_Store":
-                continue
-            archive.write(path, Path("sierra-mvp") / path.relative_to(ROOT))
+names = subprocess.check_output(["git", "ls-tree", "-r", "--name-only", "HEAD"], cwd=ROOT, text=True).splitlines()
+for name in names:
+    path = Path(name)
+    private = path.name == ".env" or path.name.startswith(".env.") and path.name != ".env.example"
+    generated = bool(set(path.parts) & EXCLUDE) or path.suffix in {".db", ".pyc"} or ".db-" in path.name
+    if private or generated:
+        raise SystemExit(f"Refusing to package private/generated tracked path: {name}")
+subprocess.run(["git", "archive", "--format=zip", "--prefix=sierra-mvp/", "HEAD", "-o", str(destination)], cwd=ROOT, check=True)
 print(destination)
