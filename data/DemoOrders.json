@@ -1,0 +1,13 @@
+[
+  {
+    "CustomerName": "Demo Explorer 01",
+    "Email": "explorer01@example.com",
+    "OrderNumber": "#DEMO001",
+    "ProductsOrdered": [
+      "SOBP001"
+    ],
+    "Status": "placed",
+    "TrackingNumber": null,
+    "DemoFixture": true
+  }
+]
